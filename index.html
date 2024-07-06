@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Rakshikha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes heartPop {
+            0% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+        body {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            font-family: 'Pacifico', cursive;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 3s ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .btn {
+            background-color: #ff6f61;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .btn:hover {
+            background-color: #ff3f3f;
+        }
+        .fun-element {
+            margin-top: 50px;
+            animation: fadeIn 6s ease-in-out;
+        }
+        .fun-element img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .interactive {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .interactive input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            font-size: 1em;
+        }
+        .interactive input[type="submit"] {
+            background-color: #ff6f61;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .interactive input[type="submit"]:hover {
+            background-color: #ff3f3f;
+        }
+        .heart {
+            position: absolute;
+            animation: heartPop 1s infinite;
+            color: red;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>For Rakshikha</h1>
+        <p>If we don't talk anymore or if you don't want to talk, remember how much I have always loved you from the beginning.</p>
+        <p>I miss you, and I can just hope you stay well and see every day filled with happiness.</p>
+        <p>You've always been my light, and I wish nothing but the best for you.</p>
+        <p>Your smile has been my strength, and your presence, my peace.</p>
+        <p>Every moment we shared is etched in my heart, and the thought of not being able to share more breaks me.</p>
+        <p>I wish I could hold you and tell you how much you mean to me.</p>
+        <p>I pray to God every day that He grants you all the happiness in the world.</p>
+        <p>Even if we are apart, my love for you will never fade.</p>
+        <p>Remember, you are always in my heart and thoughts.</p>
+        <p>I hope one day you will understand how deeply I care for you.</p>
+        <p>Until then, take care of yourself and know that I am always here for you.</p>
+        <div class="buttons">
+            <button class="btn" onclick="sendEmail()">Send Email</button>
+            <button class="btn" onclick="sendMessage()">Send WhatsApp</button>
+        </div>
+        <div class="interactive">
+            <input type="text" id="userInput" placeholder="Your thoughts...">
+            <input type="submit" onclick="showUserInput()" value="Send">
+        </div>
+        <div class="fun-element">
+            <img src="https://example.com/image.jpg" alt="Fun Element">
+        </div>
+    </div>
+
+    <script>
+        function sendEmail() {
+            window.location.href = "mailto:someone@example.com?subject=Message from Website&body=" + encodeURIComponent(document.getElementById('userInput').value);
+        }
+        function sendMessage() {
+            window.location.href = "https://wa.me/0403610254?text=" + encodeURIComponent(document.getElementById('userInput').value);
+        }
+        function showUserInput() {
+            alert(document.getElementById('userInput').value);
+        }
+        document.body.addEventListener('mousemove', function(e) {
+            var heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            heart.innerHTML = '❤️ Rakshikha';
+            document.body.appendChild(heart);
+            setTimeout(function() {
+                heart.remove();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
